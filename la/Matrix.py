@@ -9,6 +9,17 @@ class Matrix:
     def zeros(cls, i, j):
         return Matrix([[0] * j for _ in range(i)])
 
+    def dot(self, other):
+        if isinstance(other, Vector):
+            assert self.col_count() == len(other), \
+                'Error in Matrix-Vector multiplication.'
+            return Vector([self.row_vector(i).dot(other) for i in range(self.row_count())])
+        if isinstance(other, Matrix):
+            assert self.col_count() == other.col_count(), \
+                'Error in Matrix-Matrix multiplication.'
+            return Matrix([[self.row_vector(i).dot(other.col_vector(j)) for j in range(other.col_count())]
+                           for i in range(self.row_count())])
+
     def __getitem__(self, item):
         i, j = item
         return self._values[i][j]

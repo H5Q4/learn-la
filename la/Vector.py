@@ -17,7 +17,7 @@ class Vector:
             raise ZeroDivisionError('Normalize error! Norm is zero.')
         return self / self.norm()
 
-    def dot_prod(self, other):
+    def dot(self, other):
         assert len(self) == len(other), \
             'Error in dot product. Length of vectors must be same'
         return sum(a * b for a, b in zip(self, other))

@@ -25,5 +25,5 @@ if __name__ == "__main__":
     except ZeroDivisionError:
         print('Cannot normalize zero vector {}'.format(zero))
 
-    print('Dot product of {} and {} is {}'.format(v, v2, v.dot_prod(v2)))
+    print('Dot product of {} and {} is {}'.format(v, v2, v.dot(v2)))
 

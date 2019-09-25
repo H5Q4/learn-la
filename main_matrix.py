@@ -1,4 +1,5 @@
 from la.Matrix import Matrix
+from la.Vector import Vector
 
 
 if __name__ == '__main__':
@@ -17,4 +18,11 @@ if __name__ == '__main__':
     print('{} * {} = {}'.format(2, m, 2 * m))
 
     print('Zero_2_3 = {}'.format(Matrix.zeros(2, 3)))
+
+    m3 = Matrix([[1, 2], [3, 4]])
+    m4 = Matrix([[5, 6], [7, 8]])
+    v = Vector([3, 2])
+    print('Matrix-Vector:', m3.dot(v))
+    print('m3.dot(m4):', m3.dot(m4))
+    print('m4.dot(m3):', m4.dot(m3))
 
