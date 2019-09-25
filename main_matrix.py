@@ -26,3 +26,5 @@ if __name__ == '__main__':
     print('m3.dot(m4):', m3.dot(m4))
     print('m4.dot(m3):', m4.dot(m3))
 
+    print('Transpose of {} is {}'.format(m3, m3.transpose()))
+

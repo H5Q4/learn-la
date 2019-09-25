@@ -20,6 +20,9 @@ class Matrix:
             return Matrix([[self.row_vector(i).dot(other.col_vector(j)) for j in range(other.col_count())]
                            for i in range(self.row_count())])
 
+    def transpose(self):
+        return Matrix([[e for e in self.col_vector(i)] for i in range(self.col_count())])
+
     def __getitem__(self, item):
         i, j = item
         return self._values[i][j]
