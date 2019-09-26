@@ -28,3 +28,7 @@ if __name__ == '__main__':
 
     print('Transpose of {} is {}'.format(m3, m3.transpose()))
 
+    i = Matrix.identity(2)
+    print('I =', i)
+    print('m3.dot(I) =', m3.dot(i))
+

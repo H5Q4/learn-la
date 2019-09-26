@@ -9,6 +9,13 @@ class Matrix:
     def zeros(cls, i, j):
         return Matrix([[0] * j for _ in range(i)])
 
+    @classmethod
+    def identity(cls, n):
+        m = [[0] * n for _ in range(n)]
+        for i in range(n):
+            m[i][i] = 1
+        return cls(m)
+
     def dot(self, other):
         if isinstance(other, Vector):
             assert self.col_count() == len(other), \
