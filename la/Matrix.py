@@ -15,7 +15,7 @@ class Matrix:
                 'Error in Matrix-Vector multiplication.'
             return Vector([self.row_vector(i).dot(other) for i in range(self.row_count())])
         if isinstance(other, Matrix):
-            assert self.col_count() == other.col_count(), \
+            assert self.col_count() == other.row_count(), \
                 'Error in Matrix-Matrix multiplication.'
             return Matrix([[self.row_vector(i).dot(other.col_vector(j)) for j in range(other.col_count())]
                            for i in range(self.row_count())])
